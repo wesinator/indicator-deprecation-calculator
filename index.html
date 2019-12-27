@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Indicator deprecation calculator</title>
+
+        <!-- jQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+        <!-- Foundation compressed CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+
+        <!-- Foundation compressed JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="deprecation.js"></script>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div class="float-center text-center">
+            <h1>Indicator deprecation calculator</h1>
+
+            <div class="grid-x">
+                <div class="large-4 medium-4 small-4 float-center">
+                    Starting indicator confidence/severity value:
+                    <input id="start" type="number" min="0" max="100">
+
+                    <div id="deprecation-cycle">
+                        <br>
+                        <h4>Set deprecation cycle</h4>
+                        <br>
+
+                        Number of days for deprecation interval:
+                        <input id="interval-days" type="number" min="1">
+
+                        Amount to deprecate (subtract) by per cycle:
+                        <input id="deprecation-amount" type="number" min="0" max="100">
+
+                        Total time period of deprecation (days):
+                        <input id="period-days" type="number" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <button class="button secondary" onclick="getDeprecation()">Calculate deprecation</button>
+
+            <div id="results" hidden>
+                <p title="End value after deprecation is complete">Final value after deprecation: <b id="end-value"></b></p>
+            </div>
+
+        </div>
+    </body>
+</html>
