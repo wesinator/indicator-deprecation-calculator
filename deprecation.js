@@ -12,7 +12,7 @@ function getDeprecation() {
 
     var output = document.getElementById("end-value");
     //console.log(output.innerText);
-    output.innerText += endValue;
+    output.innerText = endValue;
     document.getElementById("results").removeAttribute("hidden");
 }
 
@@ -24,8 +24,6 @@ function getDeprecation() {
         total period of deprecation, in days
 */
 function deprecationCalc(startingValue, deprecationAmount, intervalDays, periodDays) {
-    var endValue = startingValue;
-    endValue = startingValue - deprecationAmount * (periodDays/intervalDays);
-
+    var endValue = startingValue - deprecationAmount * (periodDays/intervalDays);
     return endValue;
 }
