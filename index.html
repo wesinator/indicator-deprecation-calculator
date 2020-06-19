@@ -26,8 +26,8 @@
 
             <div class="grid-x">
                 <div class="large-4 medium-4 small-8 float-center">
-                    Starting indicator confidence/severity value:
-                    <input id="start" type="number" min="0">
+                    Starting indicator confidence/severity value (usually 1-100):
+                    <input id="start" type="number" min="0" value="100" title="The starting confidence or severity value (generally on a 0-100 scale)">
 
                     <div id="deprecation-cycle">
                         <br>
@@ -35,13 +35,13 @@
                         <br>
 
                         Number of days for deprecation interval:
-                        <input id="interval-days" type="number" min="1">
+                        <input id="interval-days" type="number" min="1" value="30" title="The cyclic interval in days over which the confidence deprecates">
 
-                        Amount to deprecate (subtract) by per cycle:
-                        <input id="deprecation-amount" type="number" min="0">
+                        Amount to deprecate (subtract) from confidence/severity per cycle:
+                        <input id="deprecation-amount" type="number" min="0" value="1" title="The deprecation amount">
 
-                        Total time period of deprecation (days):
-                        <input id="period-days" type="number" min="0">
+                        Target time period of deprecation (days):
+                        <input id="period-days" type="number" min="0" value="365" title="The period of time in days over which deprecation occurs">
                     </div>
                 </div>
             </div>
